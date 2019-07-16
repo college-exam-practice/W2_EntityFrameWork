@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201907162156361_Seeded 1 Clan to database.Designer.cs">
       <DependentUpon>201907162156361_Seeded 1 Clan to database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907162248111_added clan and ninja.cs" />
+    <Compile Include="Migrations\201907162248111_added clan and ninja.Designer.cs">
+      <DependentUpon>201907162248111_added clan and ninja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201907162156361_Seeded 1 Clan to database.resx">
       <DependentUpon>201907162156361_Seeded 1 Clan to database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907162248111_added clan and ninja.resx">
+      <DependentUpon>201907162248111_added clan and ninja.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

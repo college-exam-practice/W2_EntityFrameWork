@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="Classes.cs" />
     <Compile Include="EquipmentType.cs" />
-    <Compile Include="NinjaContext.cs" />
     <Compile Include="NinjaType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
