@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NinjaDomain.Classes
+using System.Data.Entity;
+using NinjaDomain.Classes;
+
+namespace NinjaDomain.DataModel
 {
-    public class Class1
+    public class NinjaContext:DbContext
     {
     }
 }
