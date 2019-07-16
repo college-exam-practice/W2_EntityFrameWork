@@ -1,10 +1,8 @@
 namespace NinjaDomain.DataModel.Migrations
 {
     using System;
-    using System.Data.Entity;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
-    using System.Linq;
-
     internal sealed class Configuration : DbMigrationsConfiguration<NinjaDomain.DataModel.NinjaContext>
     {
         public Configuration()
@@ -14,10 +12,24 @@ namespace NinjaDomain.DataModel.Migrations
 
         protected override void Seed(NinjaDomain.DataModel.NinjaContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            context.Clans.AddOrUpdate(new Classes.Clan[]
+                {
+                new Classes.Clan {Id = 1, ClanName = "Giles Clan", Ninjas = new List<Classes.Ninja>()
+                {
+                // We can add Ninjas to the Clan as we create it
+                    new Classes.Ninja
+                    {
+                        Id = 1,  DateOfBirth = DateTime.Parse("12/02/2006"),
+                        EquipmentOwned = new List<Classes.NinjaEquipment>()
+                        {
+                            new Classes.NinjaEquipment {Name = "Sweet thing", Id = 1, Type = Classes.EquipmentType.Weapon }
+                        },
+                        Name = "Ninja Giles", ServedInOniwaban = true
+                },
+                    // Next Clan record goes here
+             }
+             }
+         });
         }
     }
 }

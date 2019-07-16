@@ -48,6 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201907162118033_Ninja.cs" />
+    <Compile Include="Migrations\201907162118033_Ninja.Designer.cs">
+      <DependentUpon>201907162118033_Ninja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907162156361_Seeded 1 Clan to database.cs" />
+    <Compile Include="Migrations\201907162156361_Seeded 1 Clan to database.Designer.cs">
+      <DependentUpon>201907162156361_Seeded 1 Clan to database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NinjaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +69,14 @@
       <Project>{e6356098-1cf2-45c9-a3c3-920171b12c86}</Project>
       <Name>NinjaDomain.Classes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907162118033_Ninja.resx">
+      <DependentUpon>201907162118033_Ninja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907162156361_Seeded 1 Clan to database.resx">
+      <DependentUpon>201907162156361_Seeded 1 Clan to database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
