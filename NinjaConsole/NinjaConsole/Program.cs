@@ -12,14 +12,21 @@ namespace NinjaConsole
     {
         static void Main(string[] args)
         {
+            // 1
             Console.WriteLine("1 - Enter an Ninja id to search for : ");
             int ninjaId = int.Parse(Console.ReadLine());
             GetNinja(ninjaId);
 
+            // 2
             GetNinjaList();
 
+            // 3
             Ninja ninjaPaul = new Ninja();
             GetNinjaEquipmentList(ninjaPaul);
+
+            //4 
+            GetNinjaClanMemberList();
+
         }
         public static Ninja GetNinja(int id)
         {
@@ -75,6 +82,23 @@ namespace NinjaConsole
                 }
             }
             return ninjaEquipment;
+        }
+
+        public static List<Clan> GetNinjaClanMemberList()
+        {
+            List<Clan> clans = new List<Clan>();
+            using (NinjaContext db = new NinjaContext())
+                foreach (var item in db.Clans)
+                {
+                    Console.WriteLine(item.ClanName);
+                    using (NinjaContext db2 = new NinjaContext())
+                        foreach (var item2 in db.Ninjas)
+                        {
+                            Console.WriteLine(item2.Name);
+                        }
+                    clans.Add(item);
+                }
+            return clans;
         }
     }
 }

@@ -28,6 +28,11 @@ namespace NinjaDomain.Classes
         public int Id { get; set; }
         public string ClanName { get; set; }
         public List<Ninja> Ninjas { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Clan name : {0} List of Ninjas : {1}", ClanName, Ninjas);
+        }
     }
 
     public class NinjaEquipment
