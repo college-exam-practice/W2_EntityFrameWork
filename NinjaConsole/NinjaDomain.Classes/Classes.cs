@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace NinjaDomain.Classes
 {
@@ -11,6 +12,16 @@ namespace NinjaDomain.Classes
         public int ClanId { get; set; }
         public List<NinjaEquipment> EquipmentOwned { get; set; }
         public System.DateTime DateOfBirth { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Name {0}", Name);
+        }
+
+        public static explicit operator Ninja(List<NinjaEquipment> v)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class Clan
     {
@@ -26,5 +37,10 @@ namespace NinjaDomain.Classes
         public EquipmentType Type { get; set; }
         [Required]
         public Ninja Ninja { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("Name {0}", Name);
+        }
     }
 }
